@@ -1,20 +1,12 @@
 import React, {Component} from 'react'
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label,Input } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter,
+     Form, FormGroup, Label,Input } from 'reactstrap';
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-        //   modal: true,
           username : ''
         };
-    
-        this.toggle = this.toggle.bind(this);
-      }
-    
-      toggle() {
-        // this.setState(prevState => ({
-        //   modal: !prevState.modal
-        // }));
       }
 
       onChangeHandler = (e)=>{
@@ -22,8 +14,8 @@ class Login extends Component {
         this.setState({username:value})
       }
 
-      onSubmitHandler = (e)=>{
-          if (this.state.username !== '') {
+      onSubmitHandler = ()=>{
+          if (this.state.username.trim() !== '') {
             localStorage.setItem('username', this.state.username)
             window.location.reload()
           } else {
@@ -32,11 +24,15 @@ class Login extends Component {
       }
     
       render() {
-          const closeBtn = <button className="close" onClick={this.props.loginHandler}></button>;
+          const closeBtn = <button className="close" 
+          onClick={this.props.loginHandler}></button>;
           return (
           <div>
-            <Modal isOpen={this.props.login} toggle={this.props.loginHandler} className={this.props.className}>
-              <ModalHeader toggle={this.props.loginHandler} close={closeBtn}>Login</ModalHeader>
+            <h2 onClick={this.props.loginHandler}> kindly Click to Login</h2>
+            <Modal isOpen={this.props.login} toggle={this.props.loginHandler}
+             className={this.props.className}>
+              <ModalHeader toggle={this.props.loginHandler} 
+              close={closeBtn}>Login</ModalHeader>
               <ModalBody>
               <Form>
                 <FormGroup>

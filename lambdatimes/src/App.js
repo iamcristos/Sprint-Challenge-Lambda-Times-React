@@ -12,13 +12,16 @@ class App extends Component {
     }
   }
  loginHandler = ()=>{
+   if (this.state.login){
+     localStorage.removeItem('username')
+    }
     this.setState({login: !this.state.login})
   }
   render () {
     const AuthUser = Authenticate(Content)(Login);
     return (
       <div className="App">
-        <TopBar  login={this.loginHandler}/>
+        <TopBar  login={this.loginHandler} isLogin={this.state.login}/>
         <Header />
         <AuthUser loginHandler={this.loginHandler} login={this.state.login}/>
       </div>

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 // Refactor this component to use styled components and not classNames. 
 // You can find the corresponding CSS in the CSS/index.css file
 
-const TopBar = ({login}) => {
+const TopBar = ({login,isLogin}) => {
   const TopBar = styled.div`
     width: 100%;
     display: flex;
@@ -88,7 +88,7 @@ const RightContainer = styled.div`
           <span>GENERAL</span><span>BROWNBAG</span><span>RANDOM</span><span>MUSIC</span><span>ANNOUNCEMENTS</span>
         </CenterContainer>
         <RightContainer>
-          <span onClick={login}>LOG IN</span>
+          <span onClick={login}>{isLogin ? 'LOGOUT' : 'LOGIN'}</span>
         </RightContainer>
       </Container>
     </TopBar>
