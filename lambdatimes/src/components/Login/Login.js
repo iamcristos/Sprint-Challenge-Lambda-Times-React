@@ -4,7 +4,7 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          modal: true,
+        //   modal: true,
           username : ''
         };
     
@@ -12,9 +12,9 @@ class Login extends Component {
       }
     
       toggle() {
-        this.setState(prevState => ({
-          modal: !prevState.modal
-        }));
+        // this.setState(prevState => ({
+        //   modal: !prevState.modal
+        // }));
       }
 
       onChangeHandler = (e)=>{
@@ -32,12 +32,11 @@ class Login extends Component {
       }
     
       render() {
-          const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
-    
+          const closeBtn = <button className="close" onClick={this.props.loginHandler}></button>;
           return (
           <div>
-            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-              <ModalHeader toggle={this.toggle} close={closeBtn}>Login</ModalHeader>
+            <Modal isOpen={this.props.login} toggle={this.props.loginHandler} className={this.props.className}>
+              <ModalHeader toggle={this.props.loginHandler} close={closeBtn}>Login</ModalHeader>
               <ModalBody>
               <Form>
                 <FormGroup>
@@ -59,7 +58,7 @@ class Login extends Component {
                 <Button color="primary" 
                 onClick={this.onSubmitHandler}>Login</Button>
                 <Button color="secondary" 
-                onClick={this.toggle}>Cancel</Button>
+                onClick={this.props.loginHandler}>Cancel</Button>
             </ModalFooter>
             </Modal>
           </div>

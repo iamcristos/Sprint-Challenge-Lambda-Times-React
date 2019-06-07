@@ -20,7 +20,7 @@ class App extends Component {
       <div className="App">
         <TopBar  login={this.loginHandler}/>
         <Header />
-        <AuthUser login={this.state.login}/>
+        <AuthUser loginHandler={this.loginHandler} login={this.state.login}/>
       </div>
     );
   }
