@@ -39,13 +39,16 @@ Life-cycle are methods are custom functions that gets executed during the differ
 
 - [ ] Explain the details of a Higher Order Component?
 
-A Higher Order Component are simply components that return a component.
+A Higher Order Component are simply components that takes a component as an argument and  return a component.
 
 - [ ] What are three different ways to style components in React? Explain some of the benefits of each.
 
-1. Inline style,
-2. Using an external Library
-3. Using a css file 
+1. Inline style,: This involves adding styles inline to the jsx element example 
+<li style={{display:'none'}}/>
+
+2. Using an external Library; external libraries like reactstrap, material UI
+
+3. Using a css file; adding a unique className to our jsx, creating a css file and styling them
 
 ## Project Setup
 
