@@ -14,7 +14,7 @@ export default class Carousel extends Component {
   }
 
   leftClick = () => {
-    if (this.state.currentImage < 0) {
+    if (this.state.currentImage <= 0) {
        return this.setState({currentImage: 0})
     } else {
       return this.setState({currentImage: this.state.currentImage - 1})
@@ -22,7 +22,7 @@ export default class Carousel extends Component {
   }
 
   rightClick = () => {
-    if (this.state.currentImage > 3) {
+    if (this.state.currentImage >= 3) {
       return this.setState({currentImage: 3})
     } else {
       return this.setState({currentImage: this.state.currentImage + 1})
